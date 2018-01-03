@@ -28,6 +28,15 @@ theme: jekyll-theme-cayman
 plugins:
   - jekyll-feed
 
+# Setting defaults
+# https://jekyllrb.com/docs/configuration/#front-matter-defaults
+# defaults:
+# -
+#   scope:
+#     path: ""
+#   values:
+#     navheader: "**Navigate To:** [ [Home](index.md) ] [ [About](about.md) ] [ [Experience Summary](projects.md) ] [ [Personal Interests](hobbies.md) ]"
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
