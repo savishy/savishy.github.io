@@ -1,6 +1,37 @@
 {
+  "firstname": "Vishwanath",
+  "lastname": "Venugopalakrishnan",
+  "nickname": "Vish",
   "experience": {
     "y": 8,
     "m": 7
-  }
+  },
+  "career": [
+    {
+      "company": "Agility Roots",
+      "companyactivities": ["Consulting","Training","Certifications"],
+      "worklocations": ["Bangalore"],
+      "startdate": "2016-06-20",
+      "enddate": "2100-01-01",
+      "type": "current",
+      "designation": "DevOps Automation Architect",
+      "domains": ["IT"],
+      "responsibilities": []
+    },
+    {
+      "company": "iCelero",
+      "companyactivities": ["Desktop Software Development","Mobile Application Development"],
+      "worklocations": ["Pune","Bangalore"],
+      "startdate": "2013-04-29",
+      "enddate": "2016-06-20",
+      "type": "past",
+      "designation": "Member Technical Staff",
+      "domains": ["IT","Mobile"],
+      "responsibilities": []
+    }
+  ],
+  "education": [
+
+  ]
+
 }

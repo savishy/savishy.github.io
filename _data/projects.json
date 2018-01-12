@@ -1,0 +1,49 @@
+[
+  {
+    "startdate":"2017-12-01",
+    "enddate":"2100-01-01",
+    "status": "ongoing",
+    "type": "internal",
+    "category": [],
+    "client": "n/a",
+    "technologies": ["wordpress","composer","ansible","docker"],
+    "roles": ["Hands-on contributor"],
+    "summary": "Agility Roots Website Redesign",
+    "description": [
+      "migration of website from Rails to Wordpress",
+      "version-controlled site management with Git and Composer",
+      "conversion of web platform to docker compose service stack",
+      "ansible-based automation of infrastructure and deployment"
+    ]
+  },
+  {
+    "startdate": "2017-09-01",
+    "enddate": "2017-11-01",
+    "status": "complete",
+    "type": "client",
+    "category": [],
+    "client":"A major global Fortune 500 healthcare provider",
+    "technologies": ["docker","ansible","jenkins"],
+    "roles": ["DevOps Architect","Team Lead", "Hands-on contributor"],
+    "summary": "DevOps Vision and Strategy",
+    "description": [
+      "Worked with the VP of a major healthcare enterprise",
+      "helped them create a DevOps vision and strategy.",
+      "Worked closely with implementing engineers to identify gaps in implementing DevOps automation.",
+      "Through POCs I demonstrated alternative approaches that would realize the vision."]
+  },
+  {
+    "startdate": "2017-12-01",
+    "enddate": "2100-01-01",
+    "status": "ongoing",
+    "type": "personal",
+    "category": ["selflearning","hobby"],
+    "client": "n/a",
+    "technologies": ["nodejs","lex","aws","rest"],
+    "roles":"Individual Contributor",
+    "summary": "Chatbot with Lex",
+    "description": [
+      "A chatbot that can answer typically-asked questions about myself during an interview.",
+      "For instance, this chatbot will be able to provide a summary of the technologies I have worked in."]
+  }
+]

@@ -3,9 +3,11 @@
 # Edit theme's home layout instead if you wanna make some changes
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: default
+title: Welcome
 ---
-Hi, there. I am Vishwanath Venugopalakrishnan, but you can call me Vish.
 
-Hit the links below to explore this site.
+{% include header.md %}
 
-# [About Vish: A professional summary](about.md)
+Hi, there. I am {{site.data.profile.firstname}} {{site.data.profile.lastname}}, but you can call me {{site.data.profile.nickname}}.
+
+Hit the links above to explore this site.

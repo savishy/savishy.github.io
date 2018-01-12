@@ -6,8 +6,6 @@ permalink: /about/
 
 {% include header.md %}
 
-# Introducing Vish
-
 A few words about me:
 
 * I am an avid practitioner of DevOps and inject it into *everything* I do. Hit this link to view my resume.
