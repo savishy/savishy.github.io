@@ -5,7 +5,7 @@
     "status": "ongoing",
     "type": "internal",
     "category": [],
-    "client": "n/a",
+    "client": "Agility Roots",
     "technologies": ["wordpress","composer","ansible","docker"],
     "roles": ["Hands-on contributor"],
     "summary": "Agility Roots Website Redesign",
@@ -24,7 +24,7 @@
     "category": [],
     "client":"A major global Fortune 500 healthcare provider",
     "technologies": ["docker","ansible","jenkins"],
-    "roles": ["DevOps Architect","Team Lead", "Hands-on contributor"],
+    "roles": ["DevOps Architect","Team Lead", "Hands-On"],
     "summary": "DevOps Vision and Strategy",
     "description": [
       "Worked with the VP of a major healthcare enterprise",
@@ -40,10 +40,108 @@
     "category": ["selflearning","hobby"],
     "client": "n/a",
     "technologies": ["nodejs","lex","aws","rest"],
-    "roles":"Individual Contributor",
+    "roles":["Hands-On"],
     "summary": "Chatbot with Lex",
     "description": [
       "A chatbot that can answer typically-asked questions about myself during an interview.",
       "For instance, this chatbot will be able to provide a summary of the technologies I have worked in."]
-  }
+  },
+  {
+    "startdate": "2016-09-01",
+    "enddate": "2017-08-01",
+    "status": "complete",
+    "type": "client",
+    "category": [],
+    "client": "A Global Major Travel Platform",
+    "technologies": [
+      "jira","confluence","jenkins","kibana","rsyslog",
+      "ansible","puppet","vagrant","docker"
+    ],
+    "roles":["Team Lead","Hands-On"],
+    "summary": "Infrastructure Support and DevOps Automation",
+    "description": [
+      "Key DevOps Stakeholder for the account",
+      "Injected DevOps practices to complement existing processes to accelerate deployment RFCs to 4 environments including production.",
+      "Supported 9 Development Teams with upkeep of 10+ Dev environments.",
+      "Managed Deployment RFCs to 4 Environments till Production.",
+      "Created Automated Provisioners for Environment and DevOps Toolstack",
+      "Migrated Jenkins to version-controlled Pipeline DSL to support CD principles",
+      "Git Migration - Branching and Merging Strategies",
+      "Transformation to CI/CD practices for application and automation code",
+      "Containerized application development with Docker",
+      "Conducted Knowledge sessions on DevOps tools/processes for the account.",
+      "Managed access to client systems and environments for a team of 150+",
+      "Managed RFCs for deploying 60+ applications across 4 environments including production",
+    ]
+  },
+  {
+    "startdate": "2017-09-01",
+    "enddate": "2017-12-01",
+    "status": "complete",
+    "type": "internal",
+    "category": [],
+    "client": "Agility Roots",
+    "technologies": ["vagrant","ansible","puppet","docker","aws","packer","serverspec"],
+    "roles":["DevOps Architect","Hands-On"],
+    "summary": "Ownership of Agility Roots Laboratory Infrastructure",
+    "description": [
+      "Created Vagrant-based cloud-native laboratories for use in Agility Roots Corporate Workshops",
+      "Conceptualized and implemented Infrastructure-as-Code practices for Vagrant infrastructure",
+      "Utilized TDD practices for development of Vagrant infrastructure with ServerSpec"
+    ]
+  },
+  {
+    "startdate": "2013-04-01",
+    "enddate": "2016-06-01",
+    "status": "complete",
+    "type": "internal",
+    "category": [],
+    "client": "iCelero",
+    "technologies": ["Android","iOS","jmeter","appium","xcode"],
+    "roles":["Automation Lead"],
+    "summary": "Leadership for Test Automation at iCelero",
+    "description": [
+      "Led the test-automation effort company-wide, with R&D leadership for automation tools/techniques",
+      "Built and maintained automation frameworks across Android, iOS, Web, Server and API",
+      "Took decisions on procurement and maintenance of automation devices",
+      "Conceived and enforced processes and protocols for ensuring a maintainable, robust and scalable automation development effort: through source-control, versioning, JIRA project management, code reviews, Jenkins CI",
+      "Started practice of Knowledge-Sharing sessions to share tips/tricks, new approaches to automation, innovative solutions to hard problems etc. These sessions were attended by non-QA members as well."
+    ]
+  },
+  {
+    "startdate": "2013-04-01",
+    "enddate": "2016-06-01",
+    "status": "complete",
+    "type": "internal",
+    "category": [],
+    "client": "iCelero",
+    "technologies": ["jira",""],
+    "roles":["QA Lead"],
+    "summary": ["Lead QA for 3 mobile apps at iCelero"],
+    "description": [
+      "Strove to continually become a better QA by applying DevOps cultural practices into my workflow",
+      "QA Owner for 3 Android/iOS apps and REST API",
+      "Created and maintained test suites, configured JIRA for Test Management",
+      "created and maintained requirements documents for use by third-party testers.",
+      "Managed 20+ beta testers and created workflow automation scripts to raise their productivity."
+    ]
+  },
+  {
+    "startdate": "2013-04-01",
+    "enddate": "2016-06-01",
+    "status": "complete",
+    "type": "internal",
+    "category": [],
+    "client": "iCelero",
+    "technologies": ["jira","confluence","bitbucket","stash","jenkins","android","iOS"],
+    "roles":["Hands-On"],
+    "summary": "Lead for DevOps Automation at iCelero",
+    "description": [
+      "Built and maintained multi-platform Jenkins build and test infrastructure (for Android, iOS, Web and API). ",
+      "Migrated app source code from Stash to Bitbucket whilst ensuring minimal disruption",
+      "Created internal Maven repository for dependency management of multiple automation frameworks",
+      "Administrated JIRA, Confluence (Wiki) and BitBucket",
+      "Created JIRA-based test-management system that had tight integration with automation framework"
+    ]
+  },
 ]
