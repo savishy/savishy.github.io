@@ -3,8 +3,8 @@
   "lastname": "Venugopalakrishnan",
   "nickname": "Vish",
   "experience": {
-    "y": 8,
-    "m": 7
+    "y": 9,
+    "m": 4
   },
   "career": [
     {
@@ -15,8 +15,10 @@
       "enddate": "2100-01-01",
       "type": "current",
       "designation": "DevOps Automation Architect",
-      "domains": ["IT"],
-      "responsibilities": []
+      "domains": ["IT","Healthcare","Insurance","Travel"],
+      "responsibilities": [
+        ""
+      ]
     },
     {
       "company": "iCelero",
@@ -26,8 +28,23 @@
       "enddate": "2016-06-20",
       "type": "past",
       "designation": "Member Technical Staff",
-      "domains": ["IT","Mobile"],
-      "responsibilities": []
+      "domains": ["IT","Mobile Apps"],
+      "responsibilities": [
+
+      ]
+    },
+    {
+      "company": "AccelerEyes",
+      "companyactivities": ["Desktop Software for High Performance Computing"],
+      "worklocations": ["Pune","Bangalore"],
+      "startdate": "2013-04-29",
+      "enddate": "2016-06-20",
+      "type": "past",
+      "designation": "Member Technical Staff",
+      "domains": ["IT","Mobile Apps"],
+      "responsibilities": [
+
+      ]
     }
   ],
   "education": [

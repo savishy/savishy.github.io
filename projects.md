@@ -10,6 +10,14 @@ permalink: /projects/
 {% comment %}
 Loop through each project for project details.
 {% endcomment %}
+
+**Project Details**
+
+{% for post in site.posts %}
+* [{{ post.title }}]({{ post.url }})
+{% endfor %}
+
+
 {% for project in site.data.projects %}
 
 ## {{project.summary}}

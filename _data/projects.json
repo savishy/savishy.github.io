@@ -1,20 +1,21 @@
 [
   {
-    "startdate":"2017-12-01",
-    "enddate":"2100-01-01",
-    "status": "ongoing",
-    "type": "internal",
+    "startdate": "2018-02-20",
+    "enddate": "2018-09-20",
+    "status": "complete",
+    "type": "client",
     "category": [],
-    "client": "Agility Roots",
-    "technologies": ["wordpress","composer","ansible","docker"],
-    "roles": ["Hands-on contributor"],
-    "summary": "Agility Roots Website Redesign",
+    "client":"A Fortune Global 500 enterprise in the insurance domain.",
+    "technologies": ["TeamCity","Ansible","SharePoint","Octopus","Azure","SQL Server","Powershell DSC"],
+    "roles": ["DevOps Architect","Team Lead"],
+    "summary": "Disposable SharePoint Farm Infrastructure",
     "description": [
-      "migration of website from Rails to Wordpress",
-      "version-controlled site management with Git and Composer",
-      "conversion of web platform to docker compose service stack",
-      "ansible-based automation of infrastructure and deployment"
-    ]
+      "Designed a fully automated process to deliver an HA SharePoint Farm on Azure.",
+      "Took ownership of the code project from implementation to delivery.",
+      "The entire infrastructure (10 envs, 70 servers) was delivered efficiently at a rate of 8 hours per env.",
+      "Trained an internal DevOps automation team for streamlined infrastructure support."
+    ],
+    "more_details_url": "2018-02-20-sharepoint.md"
   },
   {
     "startdate": "2017-09-01",
@@ -23,14 +24,16 @@
     "type": "client",
     "category": [],
     "client":"A major global Fortune 500 healthcare provider",
-    "technologies": ["docker","ansible","jenkins"],
+    "technologies": ["Docker","Ansible","Jenkins"],
     "roles": ["DevOps Architect","Team Lead", "Hands-On"],
     "summary": "DevOps Vision and Strategy",
     "description": [
       "Worked with the VP of a major healthcare enterprise",
       "helped them create a DevOps vision and strategy.",
       "Worked closely with implementing engineers to identify gaps in implementing DevOps automation.",
-      "Through POCs I demonstrated alternative approaches that would realize the vision."]
+      "Through POCs I demonstrated alternative approaches that would realize the vision."
+    ],
+    "more_details_url": "2017-09-25-devops-vision-strategy.md"
   },
   {
     "startdate": "2017-12-01",
@@ -44,7 +47,9 @@
     "summary": "Chatbot with Lex",
     "description": [
       "A chatbot that can answer typically-asked questions about myself during an interview.",
-      "For instance, this chatbot will be able to provide a summary of the technologies I have worked in."]
+      "For instance, this chatbot will be able to provide a summary of the technologies I have worked in."
+    ],
+    "more_details_url": ""
   },
   {
     "startdate": "2016-09-01",
@@ -72,7 +77,8 @@
       "Conducted Knowledge sessions on DevOps tools/processes for the account.",
       "Managed access to client systems and environments for a team of 150+",
       "Managed RFCs for deploying 60+ applications across 4 environments including production",
-    ]
+    ],
+    "more_details_url": "2016-09-15-devops-automation-and-infra-support.md"
   },
   {
     "startdate": "2017-09-01",
@@ -81,14 +87,15 @@
     "type": "internal",
     "category": [],
     "client": "Agility Roots",
-    "technologies": ["vagrant","ansible","puppet","docker","aws","packer","serverspec"],
-    "roles":["DevOps Architect","Hands-On"],
-    "summary": "Ownership of Agility Roots Laboratory Infrastructure",
+    "technologies": ["Vagrant","Ansible","Puppet","Docker","AWS","Packer","Serverspec"],
+    "roles":["DevOps Architect","Team Lead"],
+    "summary": "Ownership of Internal Infrastructure-as-Code",
     "description": [
-      "Created Vagrant-based cloud-native laboratories for use in Agility Roots Corporate Workshops",
-      "Conceptualized and implemented Infrastructure-as-Code practices for Vagrant infrastructure",
-      "Utilized TDD practices for development of Vagrant infrastructure with ServerSpec"
-    ]
+      "Created cloud-native laboratories for use in Agility Roots Corporate Workshops.",
+      "Conceptualized and implemented Infrastructure-as-Code practices for lab infrastructure.",
+      "Utilized TDD practices for infrastructure development."
+    ],
+    "more_details_url": ""
   },
   {
     "startdate": "2013-04-01",
@@ -97,7 +104,7 @@
     "type": "internal",
     "category": [],
     "client": "iCelero",
-    "technologies": ["Android","iOS","jmeter","appium","xcode"],
+    "technologies": ["Android","iOS","Jmeter","Appium","Xcode"],
     "roles":["Automation Lead"],
     "summary": "Leadership for Test Automation at iCelero",
     "description": [
@@ -106,7 +113,8 @@
       "Took decisions on procurement and maintenance of automation devices",
       "Conceived and enforced processes and protocols for ensuring a maintainable, robust and scalable automation development effort: through source-control, versioning, JIRA project management, code reviews, Jenkins CI",
       "Started practice of Knowledge-Sharing sessions to share tips/tricks, new approaches to automation, innovative solutions to hard problems etc. These sessions were attended by non-QA members as well."
-    ]
+    ],
+    "more_details_url": ""
   },
   {
     "startdate": "2013-04-01",
@@ -124,7 +132,8 @@
       "Created and maintained test suites, configured JIRA for Test Management",
       "created and maintained requirements documents for use by third-party testers.",
       "Managed 20+ beta testers and created workflow automation scripts to raise their productivity."
-    ]
+    ],
+    "more_details_url": ""
   },
   {
     "startdate": "2013-04-01",
@@ -142,6 +151,7 @@
       "Created internal Maven repository for dependency management of multiple automation frameworks",
       "Administrated JIRA, Confluence (Wiki) and BitBucket",
       "Created JIRA-based test-management system that had tight integration with automation framework"
-    ]
+    ],
+    "more_details_url": "http://www.google.com"
   },
 ]
