@@ -9,7 +9,7 @@ date: YYYY-MM-DD
 <ul>
   {% for post in site.posts %}
     <li>
-      {{post.date}} - <a href="{{ post.url }}">{{ post.title }}</a>
+      {{post.date | date_to_long_string }} - <a href="{{ post.url }}">{{ post.title }}</a>
     </li>
   {% endfor %}
 </ul>
