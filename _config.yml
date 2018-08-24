@@ -29,6 +29,7 @@ markdown: kramdown
 theme: jekyll-theme-cayman
 plugins:
   - jekyll-feed
+  - jemoji
 
 # Setting defaults
 # https://jekyllrb.com/docs/configuration/#front-matter-defaults
