@@ -1,4 +1,10 @@
-# <ul>
+---
+layout: default
+title: About Vish
+permalink: /blog/
+---
+
+<ul>
   {% for post in site.posts %}
     <li>
       <a href="{{ post.url }}">{{ post.title }}</a>
