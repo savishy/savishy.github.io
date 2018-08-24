@@ -12,7 +12,6 @@ permalink: /blog/
   {% for post in site.posts %}
     <li>
       <a href="{{ post.url }}">{{ post.title }}</a> - <i>{{post.date | date_to_long_string }}</i>
-      {{ post.excerpt }}
     </li>
   {% endfor %}
 </ul>
