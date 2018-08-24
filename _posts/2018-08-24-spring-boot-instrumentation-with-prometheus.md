@@ -26,14 +26,14 @@ Also note that by default the application uses an in-memory HSQL DB. All this in
 1. Checkout the repository.
 1. Add the following to the pom.xml. More at [https://micrometer.io/docs/installing](https://micrometer.io/docs/installing). 
 
-{% highlight %}
+```
 <dependencies>
   <dependency>
     <groupId>io.micrometer</groupId>
     <artifactId>micrometer-registry-prometheus</artifactId>
     <version>1.0.6</version>
   </dependency>
-{% endhighlight %}
+```
 
 > Here we are using 1.0.6 as the version for the dependency. Check if a later version is available.
 
