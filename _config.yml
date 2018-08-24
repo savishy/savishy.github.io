@@ -22,6 +22,8 @@ url: "http://savishy.github.io" # the base hostname & protocol for your site, e.
 twitter_username: savishy
 github_username:  savishy
 
+# https://jekyllrb.com/docs/posts/#post-excerpts
+excerpt_separator: <!--more-->
 # Build settings
 markdown: kramdown
 theme: jekyll-theme-cayman
