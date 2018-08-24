@@ -113,6 +113,19 @@ These lines give you a clue as to what endpoints to hit.
 * `http://localhost:9080/manage/info` provides the info endpoint
 * `http://localhost:9080/manage/prometheus` provides the prometheus endpoint
 
+Open the `/manage/prometheus` URL and you will see the raw Prometheus metrics :heavy_check_mark:
+
+```
+# HELP hikaricp_connections_timeout_total Connection timeout total count
+# TYPE hikaricp_connections_timeout_total counter
+hikaricp_connections_timeout_total{pool="HikariPool-1",} 0.0
+# HELP jdbc_connections_max  
+# TYPE jdbc_connections_max gauge
+jdbc_connections_max{name="dataSource",} 10.0
+# HELP hikaricp_connections Total connections
+# TYPE hikaricp_connections gauge
+
+```
 
 ## References:
 
