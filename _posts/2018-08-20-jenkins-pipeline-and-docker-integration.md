@@ -11,3 +11,6 @@ categories:
 ---
 
 Foo!
+Excerpt
+<!--more-->
+Out-of-excerpt
