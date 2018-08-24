@@ -2,6 +2,7 @@
 layout: default
 title: About Vish
 permalink: /blog/
+date: YYYY-MM-DD
 ---
 
 # Blogs
