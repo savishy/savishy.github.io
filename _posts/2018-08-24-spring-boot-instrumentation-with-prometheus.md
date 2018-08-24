@@ -79,10 +79,10 @@ We will expose 3 endpoints: `info`, `health` and `prometheus`.
 
 Add the following to your application.properties:
 
-{% highlight %}
+```
 management.endpoint.prometheus.enabled=true
 management.endpoints.web.exposure.include = info, health, prometheus
-{% endhighlight %}
+```
 
 > Read more about [exposing management endpoints.](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#production-ready-endpoints-exposing-endpoints)
 
@@ -99,9 +99,12 @@ Monitor the logs printed to the console. You should see this:
 This means endpoints have been exposed, and you need to prefix them with `/manage`.
 
 ```
-2018-08-24 12:16:12.898  INFO 15092 --- [           main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/manage/health],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
-2018-08-24 12:16:12.900  INFO 15092 --- [           main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/manage/info],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
-2018-08-24 12:16:12.903  INFO 15092 --- [           main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/manage],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto protected java.util.Map<java.lang.String, java.util.Map<java.lang.String, org.springframework.boot.actuate.endpoint.web.Link>> org.springframework.boot.actuate.endpoint.web.servlet.WebMvcEndpointHandlerMapping.links(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+
+2018-08-24 12:41:45.104  INFO 8360 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoint(s) beneath base path '/manage'
+2018-08-24 12:41:45.120  INFO 8360 --- [           main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/manage/health],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-08-24 12:41:45.120  INFO 8360 --- [           main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/manage/info],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-08-24 12:41:45.120  INFO 8360 --- [           main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/manage/prometheus],methods=[GET],produces=[text/plain;version=0.0.4;charset=utf-8]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-08-24 12:41:45.120  INFO 8360 --- [           main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/manage],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto protected java.util.Map<java.lang.String, java.util.Map<java.lang.String, org.springframework.boot.actuate.endpoint.web.Link>> org.springframework.boot.actuate.endpoint.web.servlet.WebMvcEndpointHandlerMapping.links(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
 ```
 
 These lines give you a clue as to what endpoints to hit.
