@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: Instrumenting Spring Boot Applications for Prometheus Monitoring
 tags: prometheus
 categories: 
@@ -25,19 +25,20 @@ Also note that by default the application uses an in-memory HSQL DB. All this in
 
 1. Checkout the repository.
 1. Add the following to the pom.xml. More at [https://micrometer.io/docs/installing](https://micrometer.io/docs/installing). 
-1. (here we are using 1.0.6 as the version for the dependency):
 
-```
+{% highlight %}
 <dependencies>
-...
   <dependency>
     <groupId>io.micrometer</groupId>
     <artifactId>micrometer-registry-prometheus</artifactId>
     <version>1.0.6</version>
   </dependency>
-```
+{% endhighlight %}
 
-### Build the Petclinic application.
+> Here we are using 1.0.6 as the version for the dependency. Check if a later version is available.
+
+
+### Build the Petclinic application JAR.
 
 1. Build the JAR as per the instructions (TL;DR: `./mvnw install`). Note that you would need JDK 8.0, and `JAVA_HOME` must be set.
 1. This creates `target/spring-petclinic-<version>.jar`. 
@@ -68,18 +69,46 @@ Validate that Petclinic starts, and is using our application.properties. You sho
 You can now browse to `http://localhost:9080` to view the Petclinic app.
 Hit Ctrl-C on the command prompt at any time to stop the running application. 
 
-### Expose the Prometheus Endpoints!
+### Expose the Prometheus Endpoints.
 
 Now for the fun part. Let's expose the Prometheus endpoint, i.e. enable viewing Prometheus metrics from a `localhost:9080/.....` URL.
 
-We will expose 3 endpoints: `info`, `health` and `prometheus`. :exclamation: _these endpoints may expose sensitive information so be careful not to expose them in production applications._
+We will expose 3 endpoints: `info`, `health` and `prometheus`. 
 
-```
+> _These endpoints may expose sensitive information so be careful not to expose them in production applications._
+
+Add the following to your application.properties:
+
+{% highlight %}
 management.endpoint.prometheus.enabled=true
 management.endpoints.web.exposure.include = info, health, prometheus
+{% endhighlight %}
+
+> Read more about [exposing management endpoints.](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#production-ready-endpoints-exposing-endpoints)
+
+### Rerun the application with instrumentation!
+
+In the previous step we changed the application.properties. This does not require recompilation. Simply execute the `java -jar` command again. 
+
+Monitor the logs printed to the console. You should see this:
+
+```
+2018-08-24 12:16:12.887  INFO 15092 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/manage'
 ```
 
-([Read more about exposing management endpoints.](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#production-ready-endpoints-exposing-endpoints))
+This means endpoints have been exposed, and you need to prefix them with `/manage`.
+
+```
+2018-08-24 12:16:12.898  INFO 15092 --- [           main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/manage/health],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-08-24 12:16:12.900  INFO 15092 --- [           main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/manage/info],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-08-24 12:16:12.903  INFO 15092 --- [           main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/manage],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto protected java.util.Map<java.lang.String, java.util.Map<java.lang.String, org.springframework.boot.actuate.endpoint.web.Link>> org.springframework.boot.actuate.endpoint.web.servlet.WebMvcEndpointHandlerMapping.links(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+```
+
+These lines give you a clue as to what endpoints to hit.
+
+* `http://localhost:9080/manage/health` provides the health endpoint
+* `http://localhost:9080/manage/info` provides the info endpoint
+* `http://localhost:9080/manage/prometheus` provides the prometheus endpoint
 
 
 ## References:
