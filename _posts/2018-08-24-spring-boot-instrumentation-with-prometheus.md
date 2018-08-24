@@ -2,9 +2,7 @@
 layout: default
 title: Instrumenting Spring Boot Applications for Prometheus Monitoring
 tags: prometheus
-categories: 
-- devops
-- software
+categories: devops software
 ---
 
 This post talks about instrumenting a sample Spring-Boot 2.0 application with Prometheus. The motivation to write this post came from my experiments toward creating an instrumented, Dockerized Spring-Boot app that would generate metrics to be consumed by Prometheus and Grafana. Read more after the break.
