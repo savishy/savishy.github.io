@@ -21,9 +21,9 @@ permalink: /blog/
 {% for post in site.posts %}
 
 ## <a href="{{ post.url }}">{{ post.title }}</a>
-<i>Published {{post.date | date_to_long_string }}</i><br/>
-<i>Categories {{post.categories | join: ', '}} </i><p/>
-
+<i>Published: {{post.date | date_to_long_string }}</i><br/>
+<i>Categories: {{post.categories | join: ', '}} </i>
+<br/>
 {{ post.excerpt }}
 ----
 {% endfor %}
