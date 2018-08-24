@@ -16,6 +16,7 @@ permalink: /blog/
   {% endfor %}
 </ul>
 
+----
 
 {% for post in site.posts %}
 
@@ -24,5 +25,5 @@ permalink: /blog/
 <i>Categories {{post.categories | join: ', '}} </i><p/>
 
 {{ post.excerpt }}
-
+----
 {% endfor %}
