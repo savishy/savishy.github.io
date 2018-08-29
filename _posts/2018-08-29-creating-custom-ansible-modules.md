@@ -166,3 +166,89 @@ ok: [TestVMWin] => {
     "container_id": "c300ba5743da"
 }
 ```
+----
+
+### Add Port Forwarding
+
+In this iteration, I:
+
+1. Added an additional parameter `publish_all_ports` which publishes all ports marked using the `EXPOSE` keyword. The default value for this is `true`.
+1. Refactored the way we invoke the command.
+
+The invocation of this module now changes to:
+
+{% highlight yaml %}
+- win_docker_container:
+    name: prometheus_container
+    network: 'nat'
+    state: running
+    image: 'stefanscherer/prometheus-windows:2.2.0'
+    publish_all_ports: true
+{% endhighlight %}
+
+### Notes
+
+* Port Forwarding seems to work only with the `nat` network created by default. Adding new networks does not seem to work with Docker on Windows. (In other words I have a little more understanding left for Docker on Windows)
+* The web service is exposed on a random port which we would need to find out by executing `docker ps -a` on the Docker Host.
+* Accessing the web service is possible through the IP of the virtual network - `localhost` does not work.
+
+
+### The complete module
+
+{% highlight powershell %}
+
+$ErrorActionPreference = "Stop"
+
+$params = Parse-Args -arguments $args -supports_check_mode $true
+$check_mode = Get-AnsibleParam -obj $params -name "_ansible_check_mode" -type "bool" -default $false
+$diff_mode = Get-AnsibleParam -obj $params -name "_ansible_diff" -type "bool" -default $false
+
+$name = Get-AnsibleParam -obj $params -name "name" -type "str" -failifempty $true
+$state = Get-AnsibleParam -obj $params -name "state" -type "str" -default "running" -validateset "absent","present","running"
+$network = Get-AnsibleParam -obj $params -name "network" -type "str"
+$image = Get-AnsibleParam -obj $params -name "image" -type "str" -failifempty $true
+$publish_all_ports = Get-AnsibleParam -obj $params -name "publish_all_ports" -type "bool" -default $true
+
+$result = @{
+    changed = $false
+}
+
+if ($network -ne $null) {
+    $networks = $(docker network ls -q --filter "name=$($network)")
+    if ($networks -eq $null) {
+        Fail-Json -obj $result -message "When a network name is provided, create the network before calling this module."
+    }
+}
+$existingContainers = $(docker ps -aq --filter "name=$($name)")
+if ($existingContainers -ne $null) {
+    # existing containers with the same name
+    $result.container_id = $existingContainers
+} else {
+    # no existing containers; create
+    $networkCmd = if ($network -ne $null) { "--net $($network)" } else { "" }
+    $portsCmd = if ($publish_all_ports) { "-P" } else { "" }
+
+    $command = "docker run $($networkCmd) $($portsCmd) --name $($name) -d $($image)"
+    $newContainer = iex $command
+
+    $result.command = $command
+    $result.changed = $true
+    $result.container_id = $newContainer
+}
+
+
+Exit-Json -obj $result
+
+
+{% endhighlight %}
+
+
+The final output:
+
+```
+changed: [TestVMWin] => {
+    "changed": true,
+    "command": "docker run --net nat -P --name prometheus_container -d stefanscherer/prometheus-windows:2.2.0",
+    "container_id": "042c6aafd50fb74426b774533b5d3a687b292181af8ac8383b848faffb2d361a"
+}
+```
