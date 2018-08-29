@@ -64,7 +64,7 @@ $result = @{
     changed = $false
 }
 
-# INSERT CODE LOGIC HERE
+# INSERT CODE HERE
 
 
 # END INSERT
@@ -87,15 +87,15 @@ Now let's start developing the module!
 
 ----
 
-### Fleshing out the module
+### Add Basic logic to create containers declaratively
 
 My logic will include the following for starters:
 
-* Check whether containers exist with the given name.
-* If they exist, do not create a new container.
-* If not, we will need to create a container.
+* Check whether a container exists with the given name.
+* If yes, do not create a new container. Return existing container's ID.
+* If no, create a container. Return new container's ID.
 
-The logic would look something like this. I added this 
+The logic would look something like this. I added this in between the areas marked `INSERT CODE HERE`. 
 
 {% highlight powershell %}
 
@@ -108,3 +108,52 @@ if ($existingContainers -ne $null) {
 }
 
 {% endhighlight %}
+
+
+----
+
+### Add error handling and ability to handle containers without custom networks.
+
+In this iteration I added some more capability:
+
+1. If a `network` argument is passed the module will check if the docker network already exists.
+1. If it does not, the module fails with a user-friendly error.
+1. If containers already exist with given name, the container's ID is returned.
+1. If containers do not exist, logic is available to create them with or without a custom network.
+
+{% highlight powershell %}
+
+if ($network -ne $null) {
+    $networks = $(docker network ls -q --filter "name=$($network)")
+    if ($networks -eq $null) {
+        Fail-Json -obj $result -message "When a network name is provided, create the network before calling this module."
+    }
+}
+$existingContainers = $(docker ps -aq --filter "name=$($name)")
+if ($existingContainers -ne $null) {
+    # existing containers with the same name
+    $result.container_id = $existingContainers
+} else {
+    # no existing containers; create
+
+    if ($network -ne $null) {
+        $newContainer = $(docker run --net "$($network)" --name "$($name)" -d "$($image)")
+    } else {
+        $newContainer = $(docker run --name "$($name)" -d "$($image)")
+    }
+
+    $result.changed = $true
+    $result.container_id = $newContainer
+}
+
+
+{% endhighlight %}
+
+And the output of this is:
+
+```
+changed: [TestVMWin] => {
+    "changed": true,
+    "container_id": "c300ba5743da877eea1f1ef129b135725ce6fa52beb32c19c0860bb068e62b73"
+}
+```
