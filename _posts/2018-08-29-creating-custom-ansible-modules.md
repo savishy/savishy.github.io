@@ -14,13 +14,15 @@ I felt the need to create my own custom modules to get certain things to work, a
 
 ----
 
+# {page.title}
+
 ### What I want to achieve
 
 * I want to create a Prometheus Docker container on Windows with Ansible.
 * As of date (Ansible 2.5.3) the `docker_container` module does not support containers on Windows. 
 
 
-### Getting Started
+### 1. Getting Started
 
 * To start with, read the [official document](https://docs.ansible.com/ansible/2.6/dev_guide/developing_modules_general_windows.html) on custom module development.
 * I will be creating a custom module within my role. For this I create a `roles/<role-name>/library` directory.
@@ -87,7 +89,7 @@ Now let's start developing the module!
 
 ----
 
-### Add Basic logic to create containers declaratively
+### 2. Add Basic logic to create containers declaratively
 
 My logic will include the following for starters:
 
@@ -112,7 +114,7 @@ if ($existingContainers -ne $null) {
 
 ----
 
-### Add error handling and ability to handle containers without custom networks.
+### 3. Add error handling and ability to handle containers without custom networks.
 
 In this iteration I added some more capability:
 
@@ -168,7 +170,7 @@ ok: [TestVMWin] => {
 ```
 ----
 
-### Add Port Forwarding
+### 4. Add Port Forwarding
 
 In this iteration, I:
 
@@ -193,7 +195,7 @@ The invocation of this module now changes to:
 * Accessing the web service is possible through the IP of the virtual network - `localhost` does not work.
 
 
-### The complete module
+### 5. The complete module
 
 {% highlight powershell %}
 
