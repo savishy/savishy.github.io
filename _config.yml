@@ -13,20 +13,25 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Vish's Github Website
+title: DevOpsyness
 email: vish.careers@outlook.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Welcome to Vish's Site. This site serves as a summary of Vish's projects, on and off Github.
+  Vish's site on All Things DevOps.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://savishy.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: savishy
 github_username:  savishy
 
+# Add this to all posts, otherwise the entire post will appear in the /blog endpoint.
 # https://jekyllrb.com/docs/posts/#post-excerpts
 excerpt_separator: <!--more-->
+
 # Build settings
 markdown: kramdown
 theme: jekyll-theme-cayman
+
+# Plugins to load. 
+# jemoji - enables emoji in posts.
 plugins:
   - jekyll-feed
   - jemoji
