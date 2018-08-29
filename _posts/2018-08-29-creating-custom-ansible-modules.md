@@ -26,6 +26,7 @@ I felt the need to create my own custom modules to get certain things to work, a
 * I will be creating a custom module within my role. For this I create a `roles/<role-name>/library` directory.
 * The module I create is called `win_docker_container` so I create a file `win_docker_container.ps1`.
 * I took the basic `win_environment` module from the above link and pasted that into the above file and started modifying it accordingly.
+* I have a Windows Server 2016 VM on Azure which I used for testing. The Azure VM is called "Windows Server 2016 Datacenter - with Containers". 
 
 First I added a simple task that shows the intended usage of my module:
 
@@ -63,12 +64,16 @@ $result = @{
     changed = $false
 }
 
+# INSERT CODE LOGIC HERE
+
+
+# END INSERT
 Exit-Json -obj $result
 
 {% endhighlight %}
 
 
-Running the module now gives me the message:
+Running the module on a Windows Server 2016 VM now gives me the message:
 
 ```
 TASK [prometheus-grafana : win_docker_container] ******************************************************************************************************************************************************************
@@ -76,5 +81,30 @@ EXEC (via pipeline wrapper)
 ok: [TestVMWin] => {
     "changed": false
 }
-
 ```
+
+Now let's start developing the module!
+
+----
+
+### Fleshing out the module
+
+My logic will include the following for starters:
+
+* Check whether containers exist with the given name.
+* If they exist, do not create a new container.
+* If not, we will need to create a container.
+
+The logic would look something like this. I added this 
+
+{% highlight powershell %}
+
+$existingContainers = $(docker ps -aq --filter "name=$($name)")
+if ($existingContainers -ne $null) {
+    # existing containers with the same name
+} else {
+    # no existing containers; create
+    $result.changed = $true
+}
+
+{% endhighlight %}
