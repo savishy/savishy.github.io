@@ -21,10 +21,10 @@ I felt the need to create my own custom modules to get certain things to work, a
 * The module I create is called `win_docker_container` so I create a file `win_docker_container.ps1`.
 * I took the basic `win_environment` module from the above link and pasted that into the above file and started modifying it accordingly.
 
-{% highlight ruby %}
+{% highlight yaml %}
 - win_docker_container:
     name: prometheus_container
-    network: '{{mon_docker_network_name}}'
+    network: monitoring
     state: running
-    image: '{{prom_image}}'
+    image: stefanscherer/prometheus-windows:2.2.0
 {% endhighlight %}
