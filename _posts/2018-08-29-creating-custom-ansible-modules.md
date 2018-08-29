@@ -14,7 +14,7 @@ I felt the need to create my own custom modules to get certain things to work, a
 
 ----
 
-# {post.title}
+# {{post.title}}
 
 ### What I want to achieve
 
