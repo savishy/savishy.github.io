@@ -14,8 +14,6 @@ I felt the need to create my own custom modules to get certain things to work, a
 
 ----
 
-# {{post.title}}
-
 ### What I want to achieve
 
 * I want to create a Prometheus Docker container on Windows with Ansible.
