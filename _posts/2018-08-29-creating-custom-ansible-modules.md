@@ -157,3 +157,12 @@ changed: [TestVMWin] => {
     "container_id": "c300ba5743da877eea1f1ef129b135725ce6fa52beb32c19c0860bb068e62b73"
 }
 ```
+
+The true test of declarativeness would come when I ran it twice - so I did, and here's the output :+1:
+
+```
+ok: [TestVMWin] => {
+    "changed": false,
+    "container_id": "c300ba5743da"
+}
+```
