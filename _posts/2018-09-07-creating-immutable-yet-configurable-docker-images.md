@@ -24,3 +24,12 @@ You need to treat Docker images as artifacts as well - they need to built _only 
 
 The app packaging, JRE version, libraries and other dependencies form the "immutable" aspect of a Docker image.
 The mutable component is the configuration.
+
+
+1. We would create one Docker Image for our sample application, but externalize its configuration. 
+
+
+### Notes
+
+* I use Docker Compose to demonstrate this idea but obviously, there are many ways to achieve the same thing.
+* 
