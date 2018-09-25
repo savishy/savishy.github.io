@@ -10,7 +10,7 @@ This article helps understand how to manage the same inventory using Ansible Tow
 
 <!--more-->
 
-**AWX (or Ansible Tower Free Version) **
+**AWX (or Ansible Tower Free Version)**
 
 Ansible has been working on a community alternative to Ansible Tower, called [AWX](https://github.com/ansible/awx) - it provides the same backend functionality as Ansible Tower while being free and open-source.
 
